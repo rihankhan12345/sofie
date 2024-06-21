@@ -5,6 +5,7 @@ const color = {
         textPrimaryMuteColor: '#7C7C7C',
         white: '#FFF',
         black: '#000',
+        greyBackground: '#F3F3F3'
     },
     templete2: {
         primary: '#117B9E',
@@ -12,6 +13,7 @@ const color = {
         textPrimaryMuteColor: '#7C7C7C',
         white: '#FFF',
         black: '#000',
+        greyBackground: '#F3F3F3'
     }
 }
 

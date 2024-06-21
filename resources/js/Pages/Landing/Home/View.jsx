@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
@@ -8,7 +7,6 @@ import joinCommunity from '../../../Assets/Images/join-community-bg.png'
 import voloplay from '../../../Assets/Images/voloplay.png'
 import turtle from '../../../Assets/Images/turtle.png'
 import nuevocar from '../../../Assets/Images/nuevocar.png'
-
 import joinCommunityMember1 from '../../../Assets/Images/join-community-member1.png'
 import joinCommunityMember2 from '../../../Assets/Images/join-community-member2.png'
 import { Card, Grid, MobileStepper, Paper } from '@mui/material';
@@ -29,11 +27,11 @@ function DrawerAppBar(props) {
 		<>
 			<Landing>
 				<CssBaseline />
-				<Grid container spacing={2} mt={6} sx={{ display: 'flex', alignItems: 'center' }}>
-					<Grid item lg={6} md={6} sm={12}>
-						<Box pl={15}>
+				<Grid container spacing={2} mt={{xs:6}} sx={{ display: 'flex', alignItems: 'center' }}>
+					<Grid item sm={6}>
+						<Box pl={{lg:15, md:5, sm:2}} p={{xs:2}}>
 							<Typography sx={{
-								fontSize: "58px",
+								fontSize: {lg:"58px", md:'32px', sm: '24px', xs:'28px'},
 								fontWeight: '700 !important',
 							}}
 								variant="body1"
@@ -51,39 +49,31 @@ function DrawerAppBar(props) {
 								Unlock your business potential with personalized guidance from experienced mentors. Start your journey to success today by connecting with a mentor who understands your unique challenges and goals.
 							</Typography>
 							<Box className="flex gap-5 mt-10">
-								<Button variant="contained">
+								<Button variant="contained" className="w-full">
 									Sign Up to be SME
 								</Button>
-								<Button variant="outlined">
+								<Button variant="outlined" className="w-full">
 									Sign Up to be Mentor
 								</Button>
 							</Box>
 
 						</Box>
 					</Grid>
-					<Grid item lg={6} md={6} sm={12} sx={{ height: '693px' }}>
-						<img className='w-full h-full objecvolplayt-cover' style={{
+					<Grid item sm={6} sx={{ height: {lg: '693px', md: '500px', sm:'400px'} }}>
+						<img className='w-full h-full object-cover' style={{
 							maxWidth: '100',
 						}} src={headerRight} alt="description" />
 					</Grid>
 				</Grid>
 
-				<Box
-					bgcolor={theme.color[import.meta.env.VITE_SELECTED_THEME].primary}
-					p={10}
-					sx={{
-						display: 'flex',
-						flexWrap: 'wrap',
-						gap: 4,
-					}}
+				<Box bgcolor={theme.color[import.meta.env.VITE_SELECTED_THEME].primary}
+					p={{lg:10, md:5, sm:2}} mt={{sm:4, md:0}}
 				>
-					<Grid container spacing={4} pl={5}>
+					<Grid container spacing={{lg:4, md:2, sm:1, xs:2}} px={{lg:5, sm:2, xs:3}} py={6}>
 						{[0, 1, 2, 3].map((item, index) => (
-							<Grid item xs={12} sm={12} md={6} lg={3} key={index}>
-								<Card
-									variant="outlined"
-									sx={{
-										p: 5,
+							<Grid item xs={12} sm={3} key={index}>
+								<Card variant="outlined" sx={{
+										p: {lg:5, md:2, sm:.5, xs:2},
 										borderRadius: '15px',
 									}}
 								>
@@ -96,7 +86,7 @@ function DrawerAppBar(props) {
 									>
 										Empowerment
 									</Typography>
-									<Typography
+									<Typography fontSize={{lg:'16px', sm:'14px'}}
 										mt={1}
 										variant="body1"
 										color={theme.color[import.meta.env.VITE_SELECTED_THEME].textPrimaryMuteColor}
@@ -109,15 +99,17 @@ function DrawerAppBar(props) {
 					</Grid>
 				</Box>
 
-				<Grid container py={10} px={15}>
-					<Grid item xs={12} sm={12} md={6} lg={6}>
-						<img className='w-full' src={roundedImage} alt="description" />
+				<Grid container py={{lg:8, md:5, sm: 2, xs:2}} px={{lg:15, md:6, sm: 3, xs:2}}
+					sx={{
+						bgcolor: theme.color[import.meta.env.VITE_SELECTED_THEME].greyBackground
+					}}>
+					<Grid item xs={12} sm={6} >
+						<img className='w-full h-96 object-cover rounded-lg' src={roundedImage} alt="description" />
 					</Grid>
 
-					<Grid container p={4} item xs={12} sm={12} md={6} lg={6}>
-						<Typography
-							sx={{
-								fontSize: { xs: '32px', sm: '40px', md: '48px' },
+					<Grid container p={{lg:4, xs:1}} item xs={12} sm={6}>
+						<Typography sx={{
+								fontSize: { xs: '32px', sm: '24px', md: '32px' },
 								fontWeight: '700 !important',
 							}}
 							variant="body1"
@@ -125,60 +117,63 @@ function DrawerAppBar(props) {
 						>
 							Mission Statement
 						</Typography>
-						<Typography
-							mt={3}
+						<Typography mt={{lg:3}}
 							color={theme.color[import.meta.env.VITE_SELECTED_THEME].textPrimaryMuteColor}
 							variant="body1"
 						>
 							Our mission is to empower entrepreneurs by connecting them with the right mentors who can provide personalized guidance and support.
 						</Typography>
 						<Typography
-							mt={3}
+							mt={{lg:3}}
 							color={theme.color[import.meta.env.VITE_SELECTED_THEME].textPrimaryMuteColor}
 							variant="body1"
 						>
 							We envision a world where every entrepreneur has the resources and knowledge they need to succeed and make a positive impact on their communities.
 						</Typography>
-						<Typography
-							mb={5}
-							mt={3}
+						<Typography mb={{lg:5}} mt={{lg:3}}
 							color={theme.color[import.meta.env.VITE_SELECTED_THEME].textPrimaryMuteColor}
 							variant="body1"
-
 						>
 							We believe that every entrepreneur, regardless of their background or location, deserves access to high-quality mentorship. By leveraging our extensive network of experienced professionals, we aim to bridge the gap between knowledge and action.
 						</Typography>
-						<Button variant="contained">
+						<Button variant="contained" sx={{mt:2}}>
 							Read more
 						</Button>
 					</Grid>
 				</Grid>
-				<Grid container py={10} px={15} >
-					<Grid item xs={12} sm={12} md={12} lg={12}>
-						<Typography textAlign={'center'} variant="h3" color="initial"
-							sx={{
-								fontWeight: 'bold !imporatant'
-							}}>
-							Featured Mentors
+				<Grid container pb={2} px={{lg:12, md:4}} >
+					<Grid item xs={12}>
+						<Typography sx={{
+								fontSize: { xs: '32px', sm: '24px', md: '32px' },
+								fontWeight: '700 !important',
+							}}
+							textAlign={'center'}
+							variant="body1"
+							color="initial"
+						>
+						Featured Mentors
 						</Typography>
 					</Grid>
-					<Grid item xs={12} sm={12} md={12} lg={12}>
+					<Grid item xs={12}>
 						<Typography textAlign={'center'} color={theme.color[import.meta.env.VITE_SELECTED_THEME].textPrimaryMuteColor} variant="subtitle1">
 							Meet some of our exceptional mentors who bring a wealth of experience and expertise to <br /> guide you on your entrepreneurial journey
 						</Typography>
 					</Grid>
 				</Grid>
 
-				<Grid container spacing={4} px={10} pb={10}>
+				<Grid container spacing={4} px={{lg:8, md:4, xs:2}} pb={{md:10, xs:5}}>
 					{Constants.ImageCard.map((item, key) => (
-						<Grid item lg={3} xs={12} sm={12} md={6} >
+						<Grid item xs={12} sm={3} >
 							<ImageCard item={item} />
 						</Grid>
 					))}
 				</Grid>
 
-				<Grid container bgcolor={theme.color[import.meta.env.VITE_SELECTED_THEME].primary} py={10} px={15} textAlign={"center"}>
-					<Grid item md={12} xs={12}>
+				<Grid container bgcolor={theme.color[import.meta.env.VITE_SELECTED_THEME].primary}
+					py={{lg:10, md:5, xs:2}}
+					px={{lg:15, md:6, xs:3}}
+					textAlign={"center"}>
+					<Grid item xs={12}>
 						<Typography textAlign={'center'} variant="body1" color={theme.color[import.meta.env.VITE_SELECTED_THEME].white}>
 							How It Works
 						</Typography>
@@ -188,70 +183,87 @@ function DrawerAppBar(props) {
 					</Grid>
 
 					{Constants.guide.map((item, key) => (
-						<Grid item lg={3} key={key}>
+						<Grid item sm={3} key={key}>
 							<Guide item={item} />
-							{/* </Badge> */}
 						</Grid>
 					))}
 				</Grid>
 
-				<Grid container py={10} px={15} >
-					<Grid item xs={12} sm={12} md={12} lg={12}>
-						<Typography textAlign={'center'} variant="h3" color="initial"
-							sx={{
-								fontWeight: 'bold !important',
-							}}>
-							Featured SME
+				<Grid container py={{lg:2, sm:1}} px={{lg:7, md:3, sm:1}}>
+					<Grid item xs={12}>
+						<Typography sx={{
+								fontSize: { xs: '32px', sm: '24px', md: '32px' },
+								fontWeight: '700 !important',
+							}}
+							textAlign={'center'}
+							variant="body1"
+							color="initial"
+						>
+						Featured SME
 						</Typography>
 					</Grid>
-					<Grid item xs={12} sm={12} md={12} lg={12}>
+					<Grid item xs={12} py={2}>
 						<Typography textAlign={'center'} color={theme.color[import.meta.env.VITE_SELECTED_THEME].textPrimaryMuteColor} variant="subtitle1">
 							Discover some of the successfvolplayul Small Medium Enterprises (SMEs) that have thrived with <br /> the help of our mentorship program.
 						</Typography>
 					</Grid>
 				</Grid>
 
-				<Grid container spacing={4} px={10} pb={10}>
+				<Grid container spacing={{lg:4, sm:1}} px={{lg:10, md:5, xs:2}} pb={{lg:10, md:5, xs:2}}>
 					{Constants.FeatureCard.map((item, key) => (
-						<Grid item lg={4} xs={12} sm={12} md={4}>
+						<Grid item xs={12} sm={4} my={{sm:0, xs:2}}>
 							<FeatureCard item={item} />
 						</Grid>
 					))}
 				</Grid>
 
 				<Box>
-					<img style={{ position: 'absolute', zIndex: '-1' }} src={joinCommunity} width={'100%'}></img>
-					<Grid container py={10} px={15}>
-						<Grid item xs={12} sm={12} md={12} lg={12}>
-							<Typography textAlign={'center'} variant="h3" color="initial"
-								sx={{
-									fontWeight: 'bold !important',
-								}}>
-								Join Our Community
+					<img
+						style={{
+							position: 'absolute',
+							zIndex: '-1',
+							width:'100%',
+						}}
+						src={joinCommunity}
+					></img>
+					<Grid container py={{lg:10, md:5, sm:2}} px={{lg:15, md:6, sm:3}}>
+						<Grid item xs={12}>
+							<Typography sx={{
+									fontSize: { xs: '32px', sm: '24px', md: '32px' },
+									fontWeight: '700 !important',
+								}}
+								textAlign={'center'}
+								variant="body1"
+								color="initial"
+							>
+							Join Our Community
 							</Typography>
 						</Grid>
-						<Grid item xs={12} sm={12} md={12} lg={12}>
+						<Grid item xs={12} my={1}>
 							<Typography textAlign={'center'} color={theme.color[import.meta.env.VITE_SELECTED_THEME].textPrimaryMuteColor} variant="subtitle1">
 								Become a part of our dynamic and supportive community, where experienced mentors and ambitious businesses come together to achieve success.
 							</Typography>
 						</Grid>
 
-						<Grid container spacing={2} py={10} sx={{ justifyContent: 'space-between' }}>
-							<Grid item lg={4} xs={12} sm={12} md={12} >
-								<img className='w-full' src={joinCommunityMember1} alt="description" />
+						<Grid container spacing={2} py={{lg:10, md:5, sm:2}} sx={{ justifyContent: 'space-between' }}>
+							<Grid item xs={12} sm={4} >
+								<Box className="flex justify-center px-16 sm:px-0">
+									<img className='w-full' src={joinCommunityMember1} alt="description" />
+								</Box>
 							</Grid>
-							<Grid lg={7} xs={12} sm={12} md={12}>
+							<Grid item xs={12} sm={7}>
 								<Typography
+									textAlign={{xs:'center', sm:'left'}}
 									sx={{
-										fontSize: { xs: '32px', sm: '40px', md: '48px' },
-										fontWeight: '700 !important',
+										fontSize: { xs: '18px', md: '28px' },
+										fontWeight: '700',
 									}}
 									variant="body1"
-									color="initial"
 								>
 									Become a Mentor and Inspire Success
 								</Typography>
 								<Typography
+									textAlign={{xs:'center', sm:'left'}}
 									mt={3}
 									color={theme.color[import.meta.env.VITE_SELECTED_THEME].textPrimaryMuteColor}
 									variant="body1"
@@ -259,12 +271,13 @@ function DrawerAppBar(props) {
 									Join our mentorship program and share your valuable experience to help entrepreneurs succeed. As a mentor, you'll provide guidance, support, and insights to aspiring business owners.
 								</Typography>
 								<Typography
+									textAlign={{xs:'center', sm:'left'}}
 									mt={3}
 									color={theme.color[import.meta.env.VITE_SELECTED_THEME].textPrimaryMuteColor}
 									variant="body1"
 								>
 									Your mentorship can make a significant impact, helping entrepreneurs overcome challenges and achieve their business goals.								</Typography>
-								<Box mt={3}>
+								<Box mt={3} display={{xs:'flex', sm: 'block'}} justifyContent={`center`}>
 									<Button variant="contained">
 										Be A Mentor
 									</Button>
@@ -272,11 +285,11 @@ function DrawerAppBar(props) {
 							</Grid>
 						</Grid>
 
-						<Grid container py={10} sx={{ justifyContent: 'space-between' }}>
-							<Grid lg={7} xs={12} sm={12} md={12}>
+						<Grid container sx={{ justifyContent: 'space-between' }}>
+							<Grid item xs={12} sm={7}>
 								<Typography
 									sx={{
-										fontSize: { xs: '32px', sm: '40px', md: '48px' },
+										fontSize: { xs: '32px', sm: '18px', md: '28px' },
 										fontWeight: '700 !important',
 									}}
 									variant="body1"
@@ -304,34 +317,37 @@ function DrawerAppBar(props) {
 									</Button>
 								</Box>
 							</Grid>
-							<Grid item lg={4} xs={12} sm={12} md={12} >
+							<Grid item xs={12} sm={4} >
 								<img className='w-full' src={joinCommunityMember2} alt="description" />
 							</Grid>
 						</Grid>
-
 					</Grid>
 				</Box>
 
-				<Grid container py={10} px={15} >
+				<Grid container mt={2}>
 					<Grid item xs={12} sm={12} md={12} lg={12}>
-						<Typography textAlign={'center'} variant="h3" color="initial"
-							sx={{
-								fontWeight: 'bold !important',
-							}}>
-							Successfully Matched
+						<Typography sx={{
+								fontSize: { xs: '32px', sm: '24px', md: '32px' },
+								fontWeight: '700 !important',
+							}}
+							textAlign={'center'}
+							variant="body1"
+							color="initial"
+						>
+							Featured Mentors
 						</Typography>
 					</Grid>
 				</Grid>
 
-				<Grid container spacing={4} py={10} px={15} >
-					<Grid item lg={4}>
-						<Paper elevation={2} sx={{ height:'346px' }}>
-							<Box p={4}>
-								<Box sx={{ width: "335px", height:"90px" }}>
+				<Grid container spacing={{lg:4, md:2, sm:1, xs:1}} py={{lg:10, md:5, sm:2, xs:5}} px={{lg:15, md:6, sm:2, xs:2}} >
+					<Grid item xs={12} sm={4}>
+						<Paper elevation={2} sx={{height:'100%', width:'100%', pb:2}} >
+							<Box p={{sm:2, xs:2}}>
+								<Box sx={{ height:"90px" }}>
 									<img src={voloplay}></img>
 								</Box>
 								<Box pt={5}>
-									<Typography sx={{ color: '#2BAED6', fontSize: '12px' }}>Artificial Intelegence & Software</Typography>
+									<Typography sx={{ color: '#2BAED6', fontSize: '12px', height:'30px' }}>Artificial Intelegence & Software</Typography>
 									<Typography sx={{ fontWeight: 'bold', fontSize: '27px' }}>Volopay<br /> Company</Typography>
 								</Box>
 							</Box>
@@ -339,14 +355,14 @@ function DrawerAppBar(props) {
 						</Paper>
 					</Grid>
 
-					<Grid item lg={4}>
-						<Paper elevation={2} sx={{ height:'346px'}}>
-							<Box p={4}>
-								<Box sx={{ width: "335px", height:"90px" }}>
+					<Grid item xs={12} sm={4}>
+						<Paper elevation={2} sx={{height:'100%', width:'100%', pb:2}} >
+							<Box p={{sm:2, xs:2}}>
+								<Box sx={{ height:"90px" }}>
 									<img src={turtle}></img>
 								</Box>
 								<Box pt={5}>
-									<Typography sx={{ color: '#2BAED6', fontSize: '12px' }}>Alternative & Renewable Energy</Typography>
+									<Typography sx={{ color: '#2BAED6', fontSize: '12px', height:'30px' }}>Alternative & Renewable Energy</Typography>
 									<Typography sx={{ fontWeight: 'bold', fontSize: '27px' }}>TurtleTree<br /> Company</Typography>
 								</Box>
 							</Box>
@@ -354,35 +370,32 @@ function DrawerAppBar(props) {
 						</Paper>
 					</Grid>
 
-					<Grid item lg={4}>
-						<Paper elevation={2} sx={{ height:'346px'}}>
-							<Box p={4}>
-								<Box sx={{ width: "335px", height:"90px" }}>
+					<Grid item xs={12} sm={4}>
+						<Paper elevation={2} sx={{height:'100%', width:'100%', pb:2}} >
+							<Box p={{sm:2, xs:2}}>
+								<Box sx={{ height:"90px" }}>
 									<img src={nuevocar}></img>
 								</Box>
 								<Box pt={5}>
-									<Typography sx={{ color: '#2BAED6', fontSize: '12px' }}>Consumer Products</Typography>
+									<Typography sx={{ color: '#2BAED6', fontSize: '12px', height:'30px' }}>Consumer Products</Typography>
 									<Typography sx={{ fontWeight: 'bold', fontSize: '27px' }}>Nuevocor<br/> Company</Typography>
 								</Box>
 							</Box>
 							<Box className={`border-b-8 border-[${theme.color[import.meta.env.VITE_SELECTED_THEME].secondary}]`}></Box>
 						</Paper>
 					</Grid>
-
 				</Grid>
-				
-
 
 				<Box bgcolor={theme.color[import.meta.env.VITE_SELECTED_THEME].primary}
-					p={10}
+					p={{lg:10, md:5, sm:2}}
 					sx={{
 						display: 'flex',
 						flexWrap: 'wrap',
 						gap: 4,
 					}}
 				>
-					<Grid container spacing={4} pl={5} className='hidden md:block'>
-						<Grid item md={12} xs={12}>
+					<Grid container spacing={2} pl={{lg:5, md:2, sm:1}}>
+						<Grid item xs={12}>
 							<Typography textAlign={'center'} variant="body1" color={theme.color[import.meta.env.VITE_SELECTED_THEME].white}>
 								Testimonials
 							</Typography>
@@ -391,7 +404,7 @@ function DrawerAppBar(props) {
 							</Typography>
 						</Grid>
 						{Constants.Testimonials.map((item, key) => (
-							<Grid item md={4} key={key}>
+							<Grid item sm={4} key={key}>
 								<Testimonial item={item} />
         					</Grid>
 						))}

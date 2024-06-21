@@ -31,6 +31,7 @@ export default function Button(props) {
                 className={props.className}
                 sx={{
                     ...size[props.size ? props.size : "default"],
+                    ...props.sx,
                     borderRadius: '0px !important',
                     textTransform: 'capitalize !important'
                 }}>

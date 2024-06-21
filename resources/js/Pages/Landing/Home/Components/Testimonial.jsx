@@ -6,8 +6,9 @@ import React from 'react'
 const Testimonial = ({item}) => {
     return (
             <Card variant="outlined" sx={{
-                    p: 5,
-                    borderRadius: '15px',
+                    p: {lg:5, md:2, xs:1},
+                    borderRadius: {lg:'15px', xs: '7px'},
+                    height: '100%'
                 }}
             >
                 <Box className="flex justify-center items-center">

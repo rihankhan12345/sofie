@@ -7,10 +7,10 @@ import linkedin from '../../../Assets/Images/icon-linkedin@2x.png'
 export const Footer = () => {
     return (
         <Box sx={{backgroundColor:'#E8EAEC'}} p={5}>
-
             <Grid container spacing={2}>
-                <Grid item lg={3}>
-                    <Typography sx={{
+                <Grid item xs={12} sm={3}>
+                    <Typography
+                        textAlign={{xs:'center', sm:'left'}} sx={{
                             fontWeight: "bold !important",
                             fontSize: "18px !important",
                         }}
@@ -20,6 +20,7 @@ export const Footer = () => {
                         Resources
                     </Typography>
                     <Typography
+                        textAlign={{xs:'center', sm:'left'}}
                         mt={1}
                         sx={{
                             color: "#4E596D",
@@ -35,8 +36,9 @@ export const Footer = () => {
                         <br />
                     </Typography>
                 </Grid>
-                <Grid item lg={3}>
+                <Grid item xs={12} sm={3}>
                     <Typography
+                        textAlign={{xs:'center', sm:'left'}}
                         sx={{
                             fontWeight: "bold !important",
                             fontSize: "18px !important",
@@ -47,6 +49,7 @@ export const Footer = () => {
                         Learn More
                     </Typography>
                     <Typography
+                        textAlign={{xs:'center', sm:'left'}}
                         mt={1}
                         sx={{
                             color: "#4E596D",
@@ -62,8 +65,9 @@ export const Footer = () => {
                         <br />
                     </Typography>
                 </Grid>
-                <Grid item lg={3}>
+                <Grid item xs={12} sm={3}>
                     <Typography
+                        textAlign={{xs:'center', sm:'left'}}
                         sx={{
                             fontWeight: "bold !important",
                             fontSize: "18px !important",
@@ -74,6 +78,7 @@ export const Footer = () => {
                         Company
                     </Typography>
                     <Typography
+                        textAlign={{xs:'center', sm:'left'}}
                         mt={1}
                         sx={{
                             color: "#4E596D",
@@ -90,15 +95,16 @@ export const Footer = () => {
                         <br />
                     </Typography>
                 </Grid>
-                <Grid item lg={3}>
+                <Grid item xs={12} sm={3}>
                     <Typography
+                        textAlign={{xs:'center', sm:'left'}}
                         sx={{ fontWeight: "bold !important" }}
                         color="black"
                         variant="h6"
                     >
                         Connect
                     </Typography>
-                    <Box className="flex gap-2" mt={1}>
+                    <Box className="flex gap-2 justify-center sm:justify-start" mt={1}>
                         <img src={facebook}></img>
                         <img src={twitter}></img>
                         <img src={linkedin}></img>

@@ -8,7 +8,6 @@ export default function Guide({item}) {
     return (
         <Card sx={{
             bgcolor: theme.color[import.meta.env.VITE_SELECTED_THEME].primary,
-            maxWidth: 345,
             '&.MuiPaper-root':{
                 boxShadow: 'none',
             }
