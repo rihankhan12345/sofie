@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
 // Route::group(function() {
     Route::get('/', [LandingController::class, 'home']);
     Route::get('/contact-us', [LandingController::class, 'contactUs']);
+    Route::get('/login-page', [LandingController::class, 'login']);
 // });
 
 require __DIR__.'/auth.php';

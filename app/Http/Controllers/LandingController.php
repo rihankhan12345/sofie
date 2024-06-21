@@ -15,4 +15,9 @@ class LandingController extends Controller
     public function contactUs() {
         return Inertia::render('Landing/Contact/View',[]);
     }
+
+    public function login() {
+        // dd(12);
+        return Inertia::render('Landing/Login/View',[]);
+    }
 }
