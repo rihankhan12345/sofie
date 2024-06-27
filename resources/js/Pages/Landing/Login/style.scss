@@ -1,6 +1,5 @@
-
-.profile_page{
-    .profile_input_fields{
+.login_page{
+    .login_input_fields{
         .MuiInputBase-input{
             padding: 12px !important;
         }
@@ -8,14 +7,9 @@
             box-shadow: none !important;
         }
     }
-    .profile_message_field{
-        textarea:focus{
-            box-shadow: none !important;
-          }
-    }
-    .profile_select_box{
-        .MuiInputBase-input{
-            padding: 12px !important;
+    .login_btn{
+        .MuiButton-root {
+            padding: 8px 16px;
         }
     }
     .error-message {
